@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Customer Support Memory Agent — AI-powered chat with cross-channel memory via Hindsight">
+    <title>Support Memory Agent — Chat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+
+    <!-- ===== Top Navigation Bar ===== -->
+    <header id="header" class="top-bar">
+        <div class="top-bar__brand">
+            <span class="top-bar__icon">🧠</span>
+            <h1 class="top-bar__title">Hindsight<span class="top-bar__title--accent">Agent</span></h1>
+        </div>
+
+        <div class="top-bar__controls">
+            <!-- Customer selector -->
+            <div class="control-group" id="customer-group">
+                <label for="customer-select" class="control-label">Customer</label>
+                <select id="customer-select" class="control-select">
+                    <option value="">Loading…</option>
+                </select>
+            </div>
+
+            <!-- Channel selector -->
+            <div class="control-group" id="channel-group">
+                <label for="channel-select" class="control-label">Channel</label>
+                <select id="channel-select" class="control-select">
+                    <option value="chat">💬 Chat</option>
+                    <option value="email">📧 Email</option>
+                    <option value="phone">📞 Phone</option>
+                </select>
+            </div>
+
+            <!-- Memory toggle -->
+            <div class="control-group" id="memory-group">
+                <label class="control-label">Memory</label>
+                <div class="toggle-wrapper">
+                    <label class="toggle" id="memory-toggle-label">
+                        <input type="checkbox" id="memory-toggle" checked>
+                        <span class="toggle__slider"></span>
+                    </label>
+                    <span class="toggle__status" id="memory-status">ON</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== Main Layout ===== -->
+    <main id="main-layout" class="layout">
+
+        <!-- ===== Chat Panel (left) ===== -->
+        <section class="chat-panel glass-panel" id="chat-panel">
+            <div class="panel-header">
+                <h2 class="panel-title">
+                    <span class="panel-title__icon">💬</span>
+                    Conversation
+                </h2>
+                <span class="badge badge--live" id="channel-badge">CHAT</span>
+            </div>
+
+            <div class="chat-messages" id="chat-messages">
+                <div class="chat-empty" id="chat-empty">
+                    <div class="chat-empty__icon">🚀</div>
+                    <p class="chat-empty__text">Select a customer and send a message to begin.</p>
+                    <p class="chat-empty__sub">Toggle <strong>Memory OFF</strong> to see the difference.</p>
+                </div>
+            </div>
+
+            <form class="chat-input-bar" id="chat-form">
+                <input
+                    type="text"
+                    id="chat-input"
+                    class="chat-input"
+                    placeholder="Type a customer message…"
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit" class="chat-send-btn" id="chat-send-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </form>
+        </section>
+
+        <!-- ===== Memory Panel (right) ===== -->
+        <aside class="memory-panel glass-panel" id="memory-panel">
+            <div class="panel-header">
+                <h2 class="panel-title">
+                    <span class="panel-title__icon">🔍</span>
+                    What the Agent Remembers
+                </h2>
+                <button class="btn-refresh" id="refresh-memory-btn" title="Refresh memory">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="23 4 23 10 17 10"></polyline>
+                        <polyline points="1 20 1 14 7 14"></polyline>
+                        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="memory-content" id="memory-content">
+                <div class="memory-empty" id="memory-empty">
+                    <div class="memory-empty__icon">📭</div>
+                    <p>No memory retrieved yet.</p>
+                    <p class="memory-empty__sub">Send a message to see what Hindsight remembers.</p>
+                </div>
+            </div>
+
+            <div class="memory-stats" id="memory-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Memories</span>
+                    <span class="stat-value" id="stat-count">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Status</span>
+                    <span class="stat-value stat-value--idle" id="stat-status">Idle</span>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- ===== Toast container ===== -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="app.js?v=2"></script>
+</body>
+</html>

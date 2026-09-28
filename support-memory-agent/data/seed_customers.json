@@ -1,0 +1,186 @@
+[
+  {
+    "name": "Priya Sharma",
+    "email": "priya.sharma@example.com",
+    "interactions": [
+      {
+        "interaction_id": "INT-001",
+        "channel": "chat",
+        "timestamp": "2026-09-20T10:15:00Z",
+        "message": "Hi, I've been charged twice for my Pro plan subscription this month. My card shows two debits of ₹1,499 on Sept 18. Can you help?",
+        "attempted_fix": "Agent verified billing records and confirmed duplicate charge. Initiated a refund request for the second charge via the payment gateway.",
+        "resolution_status": "open",
+        "agent_name": "Ravi K.",
+        "sentiment": "frustrated",
+        "tags": ["billing", "duplicate-charge", "refund"]
+      },
+      {
+        "interaction_id": "INT-002",
+        "channel": "email",
+        "timestamp": "2026-09-22T14:30:00Z",
+        "message": "Following up on my duplicate charge issue (ref: INT-001). It has been 2 days and I still don't see the refund in my account. This is very frustrating.",
+        "attempted_fix": "Agent escalated to the finance team and provided an estimated refund timeline of 3-5 business days. Sent confirmation email with refund tracking ID.",
+        "resolution_status": "open",
+        "agent_name": "Meena S.",
+        "sentiment": "frustrated",
+        "tags": ["billing", "duplicate-charge", "refund", "follow-up"]
+      },
+      {
+        "interaction_id": "INT-003",
+        "channel": "phone",
+        "timestamp": "2026-09-25T09:45:00Z",
+        "message": "This is my THIRD time contacting you about the duplicate billing charge. I was told 3-5 business days and it's now been a week. I want to speak to a manager. If this isn't resolved today I'm cancelling my subscription.",
+        "attempted_fix": "Agent attempted to fast-track the refund with finance but the finance team's queue is backed up. Offered a one-month credit as goodwill while the refund processes.",
+        "resolution_status": "escalated",
+        "agent_name": "Arjun P.",
+        "sentiment": "frustrated",
+        "tags": ["billing", "duplicate-charge", "refund", "escalation", "churn-risk"]
+      },
+      {
+        "interaction_id": "INT-004",
+        "channel": "chat",
+        "timestamp": "2026-09-27T11:00:00Z",
+        "message": "I just got another email saying my refund is 'being processed'. It's been 9 days. I've already filed a dispute with my bank. Absolutely unacceptable service.",
+        "attempted_fix": "Senior agent confirmed the refund was stuck in an approval loop. Manually processed the refund and sent immediate confirmation. Offered two months free as compensation.",
+        "resolution_status": "open",
+        "agent_name": "Deepa R.",
+        "sentiment": "frustrated",
+        "tags": ["billing", "duplicate-charge", "refund", "bank-dispute", "churn-risk"]
+      }
+    ]
+  },
+  {
+    "name": "Marcus Johnson",
+    "email": "marcus.johnson@example.com",
+    "interactions": [
+      {
+        "interaction_id": "INT-005",
+        "channel": "email",
+        "timestamp": "2026-09-19T08:20:00Z",
+        "message": "I'm unable to export my project data as CSV. Every time I click the export button, I get a 500 error. I need this data for a client presentation tomorrow morning.",
+        "attempted_fix": "Agent reproduced the bug and filed an engineering ticket (ENG-4521). Provided a workaround using the API endpoint to export data as JSON, then convert to CSV locally.",
+        "resolution_status": "resolved",
+        "agent_name": "Tanya M.",
+        "sentiment": "negative",
+        "tags": ["bug", "export", "data-loss", "urgent"]
+      },
+      {
+        "interaction_id": "INT-006",
+        "channel": "chat",
+        "timestamp": "2026-09-21T16:10:00Z",
+        "message": "Thanks for the workaround on the CSV export. That saved my presentation. Just wanted to let you know the API method worked perfectly. When will the button be fixed though?",
+        "attempted_fix": "Agent checked engineering ticket status — fix is scheduled for next sprint (v2.14). Shared the release timeline with the customer.",
+        "resolution_status": "resolved",
+        "agent_name": "Ravi K.",
+        "sentiment": "positive",
+        "tags": ["bug", "export", "follow-up"]
+      }
+    ]
+  },
+  {
+    "name": "Aisha Patel",
+    "email": "aisha.patel@example.com",
+    "interactions": [
+      {
+        "interaction_id": "INT-007",
+        "channel": "chat",
+        "timestamp": "2026-09-18T13:00:00Z",
+        "message": "How do I add team members to my workspace? I upgraded to the Team plan but I can't find the invite option anywhere in the settings.",
+        "attempted_fix": "Agent walked the customer through Settings → Team Management → Invite Members. The option was hidden because the customer's account upgrade hadn't fully propagated. Agent triggered a manual sync.",
+        "resolution_status": "resolved",
+        "agent_name": "Meena S.",
+        "sentiment": "neutral",
+        "tags": ["onboarding", "team-management", "account-sync"]
+      },
+      {
+        "interaction_id": "INT-008",
+        "channel": "email",
+        "timestamp": "2026-09-20T09:30:00Z",
+        "message": "I invited 3 team members yesterday but they say they never received the invitation emails. Can you check if the invites went out?",
+        "attempted_fix": "Agent checked the email delivery logs and found that invite emails were queued but not sent due to a misconfigured SMTP relay. Re-sent invitations manually and confirmed delivery.",
+        "resolution_status": "resolved",
+        "agent_name": "Arjun P.",
+        "sentiment": "neutral",
+        "tags": ["onboarding", "email-delivery", "team-management"]
+      },
+      {
+        "interaction_id": "INT-009",
+        "channel": "phone",
+        "timestamp": "2026-09-23T11:15:00Z",
+        "message": "Everything is working great now with the team setup. Just calling to ask — is there a way to set different permission levels for different team members? I want some people to only view, not edit.",
+        "attempted_fix": "Agent explained the role-based access control (RBAC) feature available on the Team plan. Walked the customer through setting Viewer, Editor, and Admin roles for each member.",
+        "resolution_status": "resolved",
+        "agent_name": "Tanya M.",
+        "sentiment": "positive",
+        "tags": ["permissions", "rbac", "team-management"]
+      }
+    ]
+  },
+  {
+    "name": "David Chen",
+    "email": "david.chen@example.com",
+    "interactions": [
+      {
+        "interaction_id": "INT-010",
+        "channel": "phone",
+        "timestamp": "2026-09-17T15:30:00Z",
+        "message": "I'm trying to integrate your API with our Salesforce instance but the webhook endpoint keeps returning 403 Forbidden errors. I've double-checked the API key.",
+        "attempted_fix": "Agent identified that the customer's API key had 'read-only' scope. Guided the customer to generate a new key with 'read-write' and 'webhook' scopes enabled.",
+        "resolution_status": "open",
+        "agent_name": "Ravi K.",
+        "sentiment": "neutral",
+        "tags": ["api", "integration", "salesforce", "webhook", "permissions"]
+      },
+      {
+        "interaction_id": "INT-011",
+        "channel": "chat",
+        "timestamp": "2026-09-19T10:45:00Z",
+        "message": "I regenerated the API key with the right scopes as instructed, but now I'm getting a different error: 'payload too large'. My webhook payload is only 2KB. Is there a size limit I'm not seeing?",
+        "attempted_fix": "Agent discovered the 'payload too large' error was a known bug in API v2.3 affecting webhook payloads with nested JSON arrays. Recommended the customer switch to API v2.4-beta which has the fix.",
+        "resolution_status": "open",
+        "agent_name": "Deepa R.",
+        "sentiment": "negative",
+        "tags": ["api", "integration", "webhook", "bug", "api-version"]
+      },
+      {
+        "interaction_id": "INT-012",
+        "channel": "email",
+        "timestamp": "2026-09-24T17:00:00Z",
+        "message": "Switching to v2.4-beta fixed the payload issue, but now the webhook fires twice for every event. I'm getting duplicate records in Salesforce. This integration has been a nightmare. We have a go-live deadline next Monday.",
+        "attempted_fix": "Agent reproduced the duplicate-firing issue and filed a critical bug report (ENG-4589). Suggested implementing idempotency checks on the Salesforce side as a temporary workaround using the event_id field.",
+        "resolution_status": "escalated",
+        "agent_name": "Arjun P.",
+        "sentiment": "frustrated",
+        "tags": ["api", "integration", "salesforce", "webhook", "duplicate-events", "critical-deadline"]
+      }
+    ]
+  },
+  {
+    "name": "Fatima Al-Rashid",
+    "email": "fatima.alrashid@example.com",
+    "interactions": [
+      {
+        "interaction_id": "INT-013",
+        "channel": "email",
+        "timestamp": "2026-09-21T07:00:00Z",
+        "message": "I'd like to upgrade from the Starter plan to the Business plan. Can you walk me through what changes and whether I'll lose any of my current data or settings?",
+        "attempted_fix": "Agent provided a detailed comparison of Starter vs Business plan features. Confirmed that all data, settings, and integrations carry over seamlessly during upgrade. Shared a link to the upgrade page.",
+        "resolution_status": "resolved",
+        "agent_name": "Meena S.",
+        "sentiment": "positive",
+        "tags": ["upgrade", "plan-change", "pre-sales"]
+      },
+      {
+        "interaction_id": "INT-014",
+        "channel": "chat",
+        "timestamp": "2026-09-22T12:45:00Z",
+        "message": "I just completed the upgrade to Business plan. Everything looks good! One question — the advanced analytics dashboard is showing 'No data available'. Is there a delay before it starts populating?",
+        "attempted_fix": "Agent explained that the analytics dashboard requires a 24-hour data collection window after plan upgrade before metrics appear. Set a reminder to follow up with the customer in 24 hours.",
+        "resolution_status": "resolved",
+        "agent_name": "Tanya M.",
+        "sentiment": "neutral",
+        "tags": ["upgrade", "analytics", "onboarding"]
+      }
+    ]
+  }
+]
